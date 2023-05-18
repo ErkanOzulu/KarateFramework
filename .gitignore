@@ -2,4 +2,4 @@
 /target/
 /*.iml/
 out
-configuration.properties
+src/test/java/features/config.json
