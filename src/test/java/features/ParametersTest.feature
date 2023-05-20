@@ -1,10 +1,9 @@
 Feature: Parameters example
-
   Background:
     * def baseUrl = 'https://api.apilayer.com/exchangerates_data'
     * def SpartanUrl = 'http://3.238.70.42:8000'
+    * def hrUrl = 'http://3.238.70.42:1000/ords/hr'
     * def config = karate.read('config.json')
-
 
 
   Scenario: path parameters
@@ -49,7 +48,7 @@ Feature: Parameters example
     And print response
     And match response == expectedResult
 
-  @wip
+
   Scenario: query parameters
     Given url SpartanUrl
     And path "api/spartans/search"
@@ -67,6 +66,19 @@ Feature: Parameters example
     And match response.content[0].name == "Jaimie"
     #verify each content phone is number
     And match each response.content[*].phone == "#number"
+
+  @wip
+  Scenario: hr regions example
+    Given url hrUrl
+    And path 'regions'
+    When method GET
+    Then status 200
+    And print response.base
+    And match response.limit == 25
+    And match each response.items[*].region_id == '#number'
+    * karate.forEach(response.items, function(item){ karate.forEach(item.links, function(link){ karate.log(link) }) })
+
+
 
 
 
