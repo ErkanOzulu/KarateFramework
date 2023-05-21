@@ -9,3 +9,5 @@ Feature:get user token
     When method GET
     And print response.accessToken
     And def token = response.accessToken
+
+
