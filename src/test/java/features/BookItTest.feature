@@ -19,7 +19,7 @@ Feature: BookIt Api test
     And print response
     And match response == {"id":1590,"firstName":"Lissie","lastName":"Finnis","role":"student-team-member"}
 
-  @wip
+
   Scenario: get campus information
     Given url baseUrl
     And path '/api/campuses'
