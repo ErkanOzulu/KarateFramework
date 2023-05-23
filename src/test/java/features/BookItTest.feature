@@ -8,7 +8,7 @@ Feature: BookIt Api test
     * def accessToken = AuthFeature.token
     * print 'Token From Background',accessToken
 
-  @wip
+
   Scenario: get user information
     Given url baseUrl
     And path '/api/users/me'
