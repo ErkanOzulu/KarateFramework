@@ -1,7 +1,7 @@
 Feature: KarateJava Integration
 
   Background:
-    * def SpartanUrl = 'http://3.238.70.42:8000'
+    * def SpartanUrl = 'http://54.173.31.211:8000'
 
   Scenario:  Get a spartan with request header
     Given url SpartanUrl
